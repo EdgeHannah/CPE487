@@ -1,15 +1,16 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY leddec IS
+ENTITY ledBtnCtrl IS
 	PORT (
+		dig : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 		data : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
 		anode : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 		seg : OUT STD_LOGIC_VECTOR (0 TO 6)
 	);
-END leddec;
+END ledBtnCtrl;
 
-ARCHITECTURE Behavioral OF leddec IS
+ARCHITECTURE Behavioral OF ledBtnCtrl IS
 BEGIN
 	-- Turn on segments corresponding to 4-bit data word
 	seg <= "0000001" WHEN data = "0000" ELSE --0
@@ -30,5 +31,9 @@ BEGIN
 	       "0111000" WHEN data = "1111" ELSE --F
 	       "1111111";
 	-- Turn on anode of 7-segment display addressed by 2-bit digit selector dig
-	anode <= "1111";
+	anode <= "1110" WHEN dig = "00" ELSE --0
+	         "1101" WHEN dig = "01" ELSE --1
+	         "1011" WHEN dig = "10" ELSE --2
+	         "0111" WHEN dig = "11" ELSE --3
+	         "1111";
 END Behavioral;
