@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Nov 10 13:20:49 2020
+# Process ID: 19144
+# Current directory: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Half_Adder/Half_Adder.runs/impl_1
+# Command line: vivado.exe -log halfadder.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source halfadder.tcl -notrace
+# Log file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Half_Adder/Half_Adder.runs/impl_1/halfadder.vdi
+# Journal file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Half_Adder/Half_Adder.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source halfadder.tcl -notrace

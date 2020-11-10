@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../counter.vhd" \
+"../../../../../leddec.vhd" \
+"../../../../../hexcount.vhd" \
+
+# Do not sort compile order
+nosort
