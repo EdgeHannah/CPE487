@@ -7,7 +7,7 @@ ENTITY keypad IS
 		col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- output column lines
 		row : IN STD_LOGIC_VECTOR (4 DOWNTO 1); -- input row lines
 		value : OUT STD_LOGIC_VECTOR (3 DOWNTO 0); -- hex value of key depressed
-	hit : OUT STD_LOGIC); -- indicates when a key has been pressed
+	    hit : OUT STD_LOGIC); -- indicates when a key has been pressed
 END keypad;
 
 ARCHITECTURE Behavioral OF keypad IS

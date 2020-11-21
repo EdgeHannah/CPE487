@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc/hexcalc.runs/synth_1/hexcalc.tcl"
+  variable script "C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.runs/synth_1/hexcalc.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,27 +70,39 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
+set_msg_config  -id {Common 17-576}  -string {{WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.}}  -suppress 
+set_msg_config  -id {Constraints 18-5210}  -string {{WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a15tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc/hexcalc.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc/hexcalc.xpr} [current_project]
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
+set_property webtalk.parent_dir C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.cache/wt [current_project]
+set_property parent.project_path C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/eastc/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:cmod_a7-15t:part0:1.1 [current_project]
-set_property ip_output_repo {c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc/hexcalc.cache/ip} [current_project]
+set_property ip_output_repo c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  {C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/keypad.vhd}
-  {C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/leddec16.vhd}
-  {C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc.vhd}
+  C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/keypad.vhd
+  C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/leddec16.vhd
+  C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.vhd
 }
+read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -100,8 +112,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc.xdc}}]
+read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.xdc
+set_property used_in_implementation false [get_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

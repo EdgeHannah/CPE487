@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab 4/hexcalc/hexcalc.runs/synth_1'
+HD_PWD='C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

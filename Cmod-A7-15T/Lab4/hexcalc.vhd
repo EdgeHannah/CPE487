@@ -5,16 +5,30 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 ENTITY hexcalc IS
 	PORT (
 		sysclk : IN STD_LOGIC; -- system clock (50 MHz)
-		SEG7_anode : OUT STD_LOGIC_VECTOR (3 DOWNTO 0); -- anodes of four 7-seg displays
-		SEG7_seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0); -- common segments of 7-seg displays
+		SEG7_anode : OUT STD_LOGIC_VECTOR (0 TO 3); -- anodes of four 7-seg displays
+		SEG7_seg : OUT STD_LOGIC_VECTOR (0 TO 6); -- common segments of 7-seg displays
 		bt_clr : IN STD_LOGIC; -- calculator "clear" button
 		bt_plus : IN STD_LOGIC; -- calculator "+" button
-		bt_eq : IN STD_LOGIC; -- calculator "-" button
+		bt_eq : IN STD_LOGIC; -- calculator "=" button
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
-	KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)); -- keypad row pins
+	    KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad row pins
+	   	reset : in STD_LOGIC;
+		lock_led : out STD_LOGIC
+	);
 END hexcalc;
 
 ARCHITECTURE Behavioral OF hexcalc IS
+    signal clk_50MHz : STD_LOGIC;
+    COMPONENT clk_wiz_0 IS
+        PORT (
+          clk_50MHz   : out    std_logic;
+          reset       : in     std_logic;
+          locked      : out    std_logic;
+          clk_in      : in     std_logic   
+        );
+    
+    END COMPONENT;
+
 	COMPONENT keypad IS
 		PORT (
 			samp_ck : IN STD_LOGIC;
@@ -24,12 +38,13 @@ ARCHITECTURE Behavioral OF hexcalc IS
 			hit : OUT STD_LOGIC
 		);
 	END COMPONENT;
+	
 	COMPONENT leddec16 IS
 		PORT (
 			dig : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 			data : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
-			anode : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-			seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
+			anode : OUT STD_LOGIC_VECTOR (0 TO 3);
+			seg : OUT STD_LOGIC_VECTOR (0 TO 6)
 		);
 	END COMPONENT;
 	SIGNAL cnt : std_logic_vector(20 DOWNTO 0); -- counter to generate timing signals
@@ -42,10 +57,19 @@ ARCHITECTURE Behavioral OF hexcalc IS
 	TYPE state IS (ENTER_ACC, ACC_RELEASE, START_OP, OP_RELEASE, 
 	ENTER_OP, SHOW_RESULT); -- state machine states
 	SIGNAL pr_state, nx_state : state; -- present and next states
+
 BEGIN
-	ck_proc : PROCESS (sysclk)
+     hexcalc_inst : clk_wiz_0
+       port map ( 
+       clk_50MHz => clk_50MHz,
+       reset => reset,
+       locked => lock_led,
+       clk_in => sysclk
+     );
+ 
+	ck_proc : PROCESS (clk_50MHz)
 	BEGIN
-		IF rising_edge(sysclk) THEN -- on rising edge of clock
+		IF rising_edge(clk_50MHz) THEN -- on rising edge of clock
 			cnt <= cnt + 1; -- increment counter
 		END IF;
 	END PROCESS;
