@@ -4,12 +4,14 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY vga_top IS
     PORT (
-        clk_in    : IN STD_LOGIC;
+        sysclk    : IN STD_LOGIC;
         vga_red   : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
         vga_green : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
         vga_blue  : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
         vga_hsync : OUT STD_LOGIC;
-        vga_vsync : OUT STD_LOGIC
+        vga_vsync : OUT STD_LOGIC;
+        reset     : IN STD_LOGIC;
+        lock_led  : OUT STD_LOGIC
     );
 END vga_top;
 
@@ -48,7 +50,9 @@ ARCHITECTURE Behavioral OF vga_top IS
     component clk_wiz_0 is
     port (
       clk_in1  : in std_logic;
-      clk_out1 : out std_logic
+      reset    : in std_logic;
+      clk_out1 : out std_logic;
+      locked   : out std_logic
     );
     end component;
     
@@ -90,8 +94,10 @@ BEGIN
         
     clk_wiz_0_inst : clk_wiz_0
     port map (
-      clk_in1 => clk_in,
-      clk_out1 => pxl_clk
+      clk_in1 => sysclk,
+      clk_out1 => pxl_clk,
+      reset => reset,
+      locked => lock_led
     );
     
 END Behavioral;

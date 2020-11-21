@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Thu Nov 19 13:33:03 2020
-# Process ID: 17804
+# Start of session at: Sat Nov 21 11:18:16 2020
+# Process ID: 7864
 # Current directory: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.runs/clk_wiz_0_synth_1
 # Command line: vivado.exe -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
 # Log file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.runs/clk_wiz_0_synth_1/clk_wiz_0.vds

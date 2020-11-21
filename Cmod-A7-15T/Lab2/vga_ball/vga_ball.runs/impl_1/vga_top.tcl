@@ -122,6 +122,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 1
+  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a15tcpg236-1
   set_property board_part_repo_paths {C:/Users/eastc/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
@@ -138,7 +139,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.runs/synth_1/vga_top.dcp
-  read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/vga_top.xdc
 OPTRACE "read constraints: implementation" END { }

@@ -21,8 +21,8 @@ END vga_sync;
 ARCHITECTURE Behavioral OF vga_sync IS
 	SIGNAL h_cnt, v_cnt : STD_LOGIC_VECTOR (10 DOWNTO 0);
 
-    CONSTANT H      : INTEGER := 800;
-    CONSTANT V      : INTEGER := 600;
+    CONSTANT H      : INTEGER := 640;
+    CONSTANT V      : INTEGER := 480;
     CONSTANT H_FP   : INTEGER := 40;
     CONSTANT H_BP   : INTEGER := 88;
     CONSTANT H_SYNC : INTEGER := 128;

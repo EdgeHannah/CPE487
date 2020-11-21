@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Nov 19 13:34:02 2020
+// Date        : Sat Nov 21 11:19:10 2020
 // Host        : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
@@ -96,7 +96,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(83.333000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(7.500000),
+    .CLKOUT0_DIVIDE_F(30.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
