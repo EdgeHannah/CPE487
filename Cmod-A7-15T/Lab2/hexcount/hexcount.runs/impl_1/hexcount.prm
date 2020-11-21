@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SPIX1
+Size               4M
+Start Address      0x00000000
+End Address        0x003FFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x0021728B    Nov 17 13:14:49 2020    C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.runs/impl_1/hexcount.bit

@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Nov  3 13:48:23 2020
+| Date         : Tue Nov 17 13:05:07 2020
 | Host         : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file hexcount_control_sets_placed.rpt
 | Design       : hexcount
@@ -70,10 +70,10 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+---------------+------------------+------------------+----------------+--------------+
-|    Clock Signal   | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------+---------------+------------------+------------------+----------------+--------------+
-|  sysclk_IBUF_BUFG |               |                  |               10 |             39 |         3.90 |
-+-------------------+---------------+------------------+------------------+----------------+--------------+
++-------------------------------+---------------+------------------+------------------+----------------+--------------+
+|          Clock Signal         | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------+---------------+------------------+------------------+----------------+--------------+
+|  hexcount_inst/inst/clk_50MHz |               |                  |               10 |             39 |         3.90 |
++-------------------------------+---------------+------------------+------------------+----------------+--------------+
 
 

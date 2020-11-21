@@ -72,14 +72,18 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
+set_msg_config  -id {Netlist 29-77}  -string {{ERROR: [Netlist 29-77] Could not replace (cell 'clk_wiz_0', library 'work', file 'NOFILE') with (cell 'clk_wiz_0', library 'work_library0_1', file 'clk_wiz_0.edf') because of a port interface mismatch; port 'clk_50MHz' is missing on the replacing cell.
+Resolution: Modify RTL to reference correct ports from the netlist}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a15tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.cache/wt [current_project]
 set_property parent.project_path C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.xpr [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/eastc/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
@@ -93,6 +97,11 @@ read_vhdl -library xil_defaultlib {
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/leddec.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount.vhd
 }
+read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
