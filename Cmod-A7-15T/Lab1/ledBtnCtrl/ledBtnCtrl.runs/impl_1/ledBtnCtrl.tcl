@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/eastc/Desktop/New folder/ledBtnCtrl/ledBtnCtrl.runs/impl_1/ledBtnCtrl.tcl"
+  variable script "C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.runs/impl_1/ledBtnCtrl.tcl"
   variable category "vivado_impl"
 }
 
@@ -114,18 +114,197 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config  -id {Common 17-576}  -string {{WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.}}  -suppress 
+set_msg_config  -id {Constraints 18-5210}  -string {{WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.}}  -suppress 
 
 OPTRACE "Implementation" START { ROLLUP_1 }
+OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
+start_step init_design
+set ACTIVE_STEP init_design
+set rc [catch {
+  create_msg_db init_design.pb
+  set_param chipscope.maxJobs 1
+  set_param xicom.use_bs_reader 1
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xc7a15tcpg236-1
+  set_property board_part_repo_paths {C:/Users/eastc/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
+  set_property board_part digilentinc.com:cmod_a7-15t:part0:1.1 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
+  set_property webtalk.parent_dir C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.cache/wt [current_project]
+  set_property parent.project_path C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.xpr [current_project]
+  set_property ip_output_repo C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.cache/ip [current_project]
+  set_property ip_cache_permissions {read write} [current_project]
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.runs/synth_1/ledBtnCtrl.dcp
+OPTRACE "read constraints: implementation" START { }
+  read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top ledBtnCtrl -part xc7a15tcpg236-1
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
+OPTRACE "init_design_reports" START { REPORT }
+OPTRACE "init_design_reports" END { }
+OPTRACE "init_design_write_hwdef" START { }
+OPTRACE "init_design_write_hwdef" END { }
+  close_msg_db -file init_design.pb
+} RESULT]
+if {$rc} {
+  step_failed init_design
+  return -code error $RESULT
+} else {
+  end_step init_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Init Design" END { }
+OPTRACE "Phase: Opt Design" START { ROLLUP_AUTO }
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+OPTRACE "read constraints: opt_design" START { }
+OPTRACE "read constraints: opt_design" END { }
+OPTRACE "opt_design" START { }
+  opt_design 
+OPTRACE "opt_design" END { }
+OPTRACE "read constraints: opt_design_post" START { }
+OPTRACE "read constraints: opt_design_post" END { }
+OPTRACE "Opt Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force ledBtnCtrl_opt.dcp
+OPTRACE "Opt Design: write_checkpoint" END { }
+OPTRACE "opt_design reports" START { REPORT }
+  create_report "impl_1_opt_report_drc_0" "report_drc -file ledBtnCtrl_drc_opted.rpt -pb ledBtnCtrl_drc_opted.pb -rpx ledBtnCtrl_drc_opted.rpx"
+OPTRACE "opt_design reports" END { }
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Opt Design" END { }
+OPTRACE "Phase: Place Design" START { ROLLUP_AUTO }
+start_step place_design
+set ACTIVE_STEP place_design
+set rc [catch {
+  create_msg_db place_design.pb
+OPTRACE "read constraints: place_design" START { }
+OPTRACE "read constraints: place_design" END { }
+  if { [llength [get_debug_cores -quiet] ] > 0 }  { 
+OPTRACE "implement_debug_core" START { }
+    implement_debug_core 
+OPTRACE "implement_debug_core" END { }
+  } 
+OPTRACE "place_design" START { }
+  place_design 
+OPTRACE "place_design" END { }
+OPTRACE "read constraints: place_design_post" START { }
+OPTRACE "read constraints: place_design_post" END { }
+OPTRACE "Place Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force ledBtnCtrl_placed.dcp
+OPTRACE "Place Design: write_checkpoint" END { }
+OPTRACE "place_design reports" START { REPORT }
+  create_report "impl_1_place_report_io_0" "report_io -file ledBtnCtrl_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file ledBtnCtrl_utilization_placed.rpt -pb ledBtnCtrl_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file ledBtnCtrl_control_sets_placed.rpt"
+OPTRACE "place_design reports" END { }
+  close_msg_db -file place_design.pb
+} RESULT]
+if {$rc} {
+  step_failed place_design
+  return -code error $RESULT
+} else {
+  end_step place_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Place Design" END { }
+OPTRACE "Phase: Physical Opt Design" START { ROLLUP_AUTO }
+start_step phys_opt_design
+set ACTIVE_STEP phys_opt_design
+set rc [catch {
+  create_msg_db phys_opt_design.pb
+OPTRACE "read constraints: phys_opt_design" START { }
+OPTRACE "read constraints: phys_opt_design" END { }
+OPTRACE "phys_opt_design" START { }
+  phys_opt_design 
+OPTRACE "phys_opt_design" END { }
+OPTRACE "read constraints: phys_opt_design_post" START { }
+OPTRACE "read constraints: phys_opt_design_post" END { }
+OPTRACE "Post-Place Phys Opt Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force ledBtnCtrl_physopt.dcp
+OPTRACE "Post-Place Phys Opt Design: write_checkpoint" END { }
+OPTRACE "phys_opt_design report" START { REPORT }
+OPTRACE "phys_opt_design report" END { }
+  close_msg_db -file phys_opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step phys_opt_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "Phase: Physical Opt Design" END { }
+OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
+start_step route_design
+set ACTIVE_STEP route_design
+set rc [catch {
+  create_msg_db route_design.pb
+OPTRACE "read constraints: route_design" START { }
+OPTRACE "read constraints: route_design" END { }
+OPTRACE "route_design" START { }
+  route_design 
+OPTRACE "route_design" END { }
+OPTRACE "read constraints: route_design_post" START { }
+OPTRACE "read constraints: route_design_post" END { }
+OPTRACE "Route Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force ledBtnCtrl_routed.dcp
+OPTRACE "Route Design: write_checkpoint" END { }
+OPTRACE "route_design reports" START { REPORT }
+  create_report "impl_1_route_report_drc_0" "report_drc -file ledBtnCtrl_drc_routed.rpt -pb ledBtnCtrl_drc_routed.pb -rpx ledBtnCtrl_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file ledBtnCtrl_methodology_drc_routed.rpt -pb ledBtnCtrl_methodology_drc_routed.pb -rpx ledBtnCtrl_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file ledBtnCtrl_power_routed.rpt -pb ledBtnCtrl_power_summary_routed.pb -rpx ledBtnCtrl_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file ledBtnCtrl_route_status.rpt -pb ledBtnCtrl_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file ledBtnCtrl_timing_summary_routed.rpt -pb ledBtnCtrl_timing_summary_routed.pb -rpx ledBtnCtrl_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file ledBtnCtrl_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file ledBtnCtrl_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file ledBtnCtrl_bus_skew_routed.rpt -pb ledBtnCtrl_bus_skew_routed.pb -rpx ledBtnCtrl_bus_skew_routed.rpx"
+OPTRACE "route_design reports" END { }
+OPTRACE "route_design misc" START { }
+  close_msg_db -file route_design.pb
+OPTRACE "route_design write_checkpoint" START { CHECKPOINT }
+OPTRACE "route_design write_checkpoint" END { }
+} RESULT]
+if {$rc} {
+  write_checkpoint -force ledBtnCtrl_routed_error.dcp
+  step_failed route_design
+  return -code error $RESULT
+} else {
+  end_step route_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "route_design misc" END { }
+OPTRACE "Phase: Route Design" END { }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
 OPTRACE "write_bitstream setup" START { }
 start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 1
-  open_checkpoint ledBtnCtrl_routed.dcp
-  set_property webtalk.parent_dir {C:/Users/eastc/Desktop/New folder/ledBtnCtrl/ledBtnCtrl.cache/wt} [current_project]
-set_property TOP ledBtnCtrl [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
   catch { write_mem_info -force ledBtnCtrl.mmi }

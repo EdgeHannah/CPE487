@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/eastc/Desktop/leddec/leddec.runs/synth_1/ledBtnCtrl.tcl"
+  variable script "C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.runs/synth_1/ledBtnCtrl.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,19 +70,24 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 1
+set_param xicom.use_bs_reader 1
+set_msg_config  -id {Common 17-576}  -string {{WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.}}  -suppress 
+set_msg_config  -id {Constraints 18-5210}  -string {{WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.}}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a15tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/eastc/Desktop/leddec/leddec.cache/wt [current_project]
-set_property parent.project_path C:/Users/eastc/Desktop/leddec/leddec.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.cache/wt [current_project]
+set_property parent.project_path C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part_repo_paths {C:/Users/eastc/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store} [current_project]
 set_property board_part digilentinc.com:cmod_a7-15t:part0:1.1 [current_project]
-set_property ip_output_repo c:/Users/eastc/Desktop/leddec/leddec.cache/ip [current_project]
+set_property ip_output_repo c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1604240170">
+<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1606150437">
   <File Type="PA-TCL" Name="ledBtnCtrl.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ledBtnCtrl_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ledBtnCtrl_reports.tcl"/>
@@ -11,7 +11,7 @@
   <File Type="VDS-TIMING-PB" Name="ledBtnCtrl_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl.vhd">
+    <File Path="$PPRDIR/../ledBtnCtrl.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -25,7 +25,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl.xdc">
+    <File Path="$PPRDIR/../ledBtnCtrl.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

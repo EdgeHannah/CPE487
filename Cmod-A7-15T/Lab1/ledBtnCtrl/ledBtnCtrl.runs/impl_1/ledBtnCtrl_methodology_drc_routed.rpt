@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sun Nov  1 09:18:27 2020
+| Date         : Mon Nov 23 11:55:51 2020
 | Host         : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 | Command      : report_methodology -file ledBtnCtrl_methodology_drc_routed.rpt -pb ledBtnCtrl_methodology_drc_routed.pb -rpx ledBtnCtrl_methodology_drc_routed.rpx
 | Design       : ledBtnCtrl

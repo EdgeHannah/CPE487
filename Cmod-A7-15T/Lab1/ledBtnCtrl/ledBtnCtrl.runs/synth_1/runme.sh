@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/eastc/Desktop/leddec/leddec.runs/synth_1'
+HD_PWD='C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab1/ledBtnCtrl/ledBtnCtrl.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
