@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Sat Nov 21 14:35:30 2020
+| Date         : Sun Nov 22 21:29:15 2020
 | Host         : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 | Command      : report_methodology -file hexcalc_methodology_drc_routed.rpt -pb hexcalc_methodology_drc_routed.pb -rpx hexcalc_methodology_drc_routed.rpx
 | Design       : hexcalc
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 57
+             Violations found: 58
 +-----------+------------------+------------------------------------------------+------------+
 | Rule      | Severity         | Description                                    | Violations |
 +-----------+------------------+------------------------------------------------+------------+
 | TIMING-6  | Critical Warning | No common primary clock between related clocks | 2          |
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                    | 55         |
+| TIMING-20 | Warning          | Non-clocked latch                              | 1          |
 +-----------+------------------+------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -316,6 +317,11 @@ Related violations: <none>
 TIMING-17#55 Critical Warning
 Non-clocked sequential cell  
 The clock pin pr_state_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch plus_sub_reg cannot be properly analyzed as its control pin plus_sub_reg/G is not reached by a timing clock
 Related violations: <none>
 
 

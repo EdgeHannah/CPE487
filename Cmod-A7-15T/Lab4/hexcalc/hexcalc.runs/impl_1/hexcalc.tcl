@@ -142,7 +142,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.runs/synth_1/hexcalc.dcp
-  read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.xdc
 OPTRACE "read constraints: implementation" END { }

@@ -98,7 +98,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/leddec16.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.vhd
 }
-read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc/hexcalc.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
@@ -115,6 +115,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.xdc
 set_property used_in_implementation false [get_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab4/hexcalc.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

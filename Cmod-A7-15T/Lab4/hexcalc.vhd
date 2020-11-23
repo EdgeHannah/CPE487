@@ -4,12 +4,13 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY hexcalc IS
 	PORT (
-		sysclk : IN STD_LOGIC; -- system clock (50 MHz)
+		sysclk : IN STD_LOGIC; -- system clock (12 MHz)
 		SEG7_anode : OUT STD_LOGIC_VECTOR (0 TO 3); -- anodes of four 7-seg displays
 		SEG7_seg : OUT STD_LOGIC_VECTOR (0 TO 6); -- common segments of 7-seg displays
 		bt_clr : IN STD_LOGIC; -- calculator "clear" button
 		bt_plus : IN STD_LOGIC; -- calculator "+" button
 		bt_eq : IN STD_LOGIC; -- calculator "=" button
+		bt_sub : IN STD_LOGIC; -- calculator "-" button
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
 	    KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad row pins
 	   	reset : in STD_LOGIC;
@@ -47,6 +48,8 @@ ARCHITECTURE Behavioral OF hexcalc IS
 			seg : OUT STD_LOGIC_VECTOR (0 TO 6)
 		);
 	END COMPONENT;
+   
+	
 	SIGNAL cnt : std_logic_vector(20 DOWNTO 0); -- counter to generate timing signals
 	SIGNAL kp_clk, kp_hit, sm_clk : std_logic;
 	SIGNAL kp_value : std_logic_vector (3 DOWNTO 0);
@@ -57,6 +60,7 @@ ARCHITECTURE Behavioral OF hexcalc IS
 	TYPE state IS (ENTER_ACC, ACC_RELEASE, START_OP, OP_RELEASE, 
 	ENTER_OP, SHOW_RESULT); -- state machine states
 	SIGNAL pr_state, nx_state : state; -- present and next states
+	SIGNAL plus_sub: STD_LOGIC; --Indicates plus or minus, plus is high
 
 BEGIN
      hexcalc_inst : clk_wiz_0
@@ -73,6 +77,7 @@ BEGIN
 			cnt <= cnt + 1; -- increment counter
 		END IF;
 	END PROCESS;
+	
 	kp_clk <= cnt(15); -- keypad interrogation clock
 	sm_clk <= cnt(20); -- state machine clock
 	led_mpx <= cnt(18 DOWNTO 17); -- 7-seg multiplexing clock
@@ -112,6 +117,10 @@ BEGIN
 						nx_state <= ACC_RELEASE;
 					ELSIF bt_plus = '1' THEN
 						nx_state <= START_OP;
+						plus_sub <= '1'; 
+					ELSIF bt_sub = '1' THEN --Modification for subtraction
+						nx_state <= START_OP;	
+						plus_sub <= '0';
 					ELSE
 						nx_state <= ENTER_ACC;
 					END IF;
@@ -135,9 +144,12 @@ BEGIN
 					END IF;
 				WHEN ENTER_OP => -- waiting for next digit in 2nd operand
 					display <= operand;
-					IF bt_eq = '1' THEN
+					IF (bt_eq = '1' AND plus_sub = '1') THEN
 						nx_acc <= acc + operand;
 						nx_state <= SHOW_RESULT;
+					ELSIF (bt_eq = '1' AND plus_sub = '0') THEN
+						nx_acc <= acc - operand;
+						nx_state <= SHOW_RESULT;	
 					ELSIF kp_hit = '1' THEN
 						nx_operand <= operand(11 DOWNTO 0) & kp_value;
 						nx_state <= OP_RELEASE;
