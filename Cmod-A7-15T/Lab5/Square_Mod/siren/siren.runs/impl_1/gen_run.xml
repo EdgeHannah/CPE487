@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1606248316">
+  <File Type="BITSTR-BMM" Name="siren_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="siren_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="siren_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="siren_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="siren.tcl"/>
+  <File Type="OPT-TIMING" Name="siren_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="siren_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="siren_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="siren_reports.tcl"/>
+  <File Type="OPT-DRC" Name="siren_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="siren.hwdef"/>
+  <File Type="PWROPT-DCP" Name="siren_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="siren_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="siren_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="siren_placed.dcp"/>
+  <File Type="PLACE-IO" Name="siren_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="siren_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="siren_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="siren_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="siren_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="siren_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="siren_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="siren_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="siren_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="siren.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="siren_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="siren_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="siren_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="siren.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="siren_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="siren_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="siren_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="siren_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="siren_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="siren_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="siren_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="siren.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="siren_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="siren_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="siren_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="siren_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="siren_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="siren_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="siren_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="siren_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="siren_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="siren_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="siren_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="siren_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="siren_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="siren_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="siren_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="siren_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="siren_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="siren_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="siren_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="siren_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="siren_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="siren.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="siren_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="siren.rbt"/>
+  <File Type="BITSTR-NKY" Name="siren.nky"/>
+  <File Type="PDI-FILE" Name="siren.pdi"/>
+  <File Type="RCFI_FILE" Name="siren.rcfi"/>
+  <File Type="CFI_FILE" Name="siren.cfi"/>
+  <File Type="RNPI_FILE" Name="siren.rnpi"/>
+  <File Type="NPI_FILE" Name="siren.npi"/>
+  <File Type="RBD_FILE" Name="siren.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="siren.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="siren.sysdef"/>
+  <File Type="BG-BGN" Name="siren.bgn"/>
+  <File Type="BG-DRC" Name="siren.drc"/>
+  <File Type="RDI-RDI" Name="siren.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../Lab5/dac_if.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Lab5/tone.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Lab5/wail.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Lab5/siren.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="siren"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../Lab5/siren.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>
