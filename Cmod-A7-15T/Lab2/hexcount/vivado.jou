@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Nov 23 19:28:22 2020
+# Process ID: 15348
+# Current directory: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21344 C:\Users\eastc\Desktop\CPE487\Cmod-A7-15T\Lab2\hexcount\hexcount.xpr
+# Log file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/vivado.log
+# Journal file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/hexcount/hexcount.xpr
+update_compile_order -fileset sources_1

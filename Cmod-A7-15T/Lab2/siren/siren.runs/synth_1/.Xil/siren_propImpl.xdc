@@ -1,0 +1,22 @@
+set_property SRC_FILE_INFO {cfile:c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/siren/siren.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc rfile:../../../siren.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc id:1 order:EARLY scoped_inst:hexcount_inst} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab5/siren.xdc rfile:../../../../../Lab5/siren.xdc id:2} [current_design]
+current_instance hexcount_inst
+set_property src_info {type:SCOPED_XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+create_clock -period 83.333 [get_ports -no_traverse {}]
+set_property src_info {type:SCOPED_XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
+create_generated_clock -source [get_ports clk_in1] -edges {1 2 3} -edge_shift {0.000 -31.667 -63.333} [get_ports {}]
+current_instance
+set_property src_info {type:XDC file:2 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L17   IOSTANDARD LVCMOS33 } [get_ports { sysclk }]; #IO_L12P_T1_MRCC_14 Sch=gclk
+set_property src_info {type:XDC file:2 line:11 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A17   IOSTANDARD LVCMOS33 } [get_ports { lock_led }]; #IO_L12N_T1_MRCC_16 Sch=led[1]
+set_property src_info {type:XDC file:2 line:15 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN A18   IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L19N_T3_VREF_16 Sch=btn[0]
+set_property src_info {type:XDC file:2 line:20 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G17   IOSTANDARD LVCMOS33 } [get_ports { dac_MCLK }]; #IO_L5N_T0_D07_14 Sch=ja[1]
+set_property src_info {type:XDC file:2 line:21 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN G19   IOSTANDARD LVCMOS33 } [get_ports { dac_LRCK }]; #IO_L4N_T0_D05_14 Sch=ja[2]
+set_property src_info {type:XDC file:2 line:22 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN N18   IOSTANDARD LVCMOS33 } [get_ports { dac_SCLK }]; #IO_L9P_T1_DQS_14 Sch=ja[3]
+set_property src_info {type:XDC file:2 line:23 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L18   IOSTANDARD LVCMOS33 } [get_ports { dac_SDIN }]; #IO_L8P_T1_D11_14 Sch=ja[4]
