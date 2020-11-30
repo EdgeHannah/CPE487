@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Nov 29 16:43:33 2020
+# Process ID: 9560
+# Current directory: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21456 C:\Users\eastc\Desktop\CPE487\Cmod-A7-15T\Lab3\No-Modifications\vga_ball\vga_ball.xpr
+# Log file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball/vivado.log
+# Journal file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball/vga_ball.xpr
+update_compile_order -fileset sources_1
+update_files -from_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/ball.vhd -to_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/Lab3/ball.vhd -filesets [get_filesets *]
+update_compile_order -fileset sources_1
+update_files -from_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_sync.vhd -to_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/Lab3/vga_sync.vhd -filesets [get_filesets *]
+update_files -from_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_top.vhd -to_files C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/Lab3/vga_top.vhd -filesets [get_filesets *]
+update_compile_order -fileset sources_1

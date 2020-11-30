@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1605977190">
+<GenRun Id="impl_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1606686368">
   <File Type="BITSTR-BMM" Name="vga_top_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="vga_top_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="vga_top_timing_summary_init.rpt"/>
@@ -77,19 +77,19 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../Lab3/ball.vhd">
+    <File Path="$PPRDIR/../ball.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../Lab3/vga_sync.vhd">
+    <File Path="$PPRDIR/../vga_sync.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../Lab3/vga_top.vhd">
+    <File Path="$PPRDIR/../vga_top.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -103,13 +103,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../Lab3/vga_top.xdc">
+    <File Path="$PPRDIR/../vga_top.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../vga_top.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

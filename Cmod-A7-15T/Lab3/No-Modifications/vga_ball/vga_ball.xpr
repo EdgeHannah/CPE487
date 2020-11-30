@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="49" Path="C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.xpr">
+<Project Version="7" Minor="49" Path="C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball/vga_ball.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="801c9c2e908e49d48fb37a9e60345302"/>
@@ -27,7 +27,7 @@
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="SimulatorLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val="digilentinc.com:cmod_a7-15t:part0:1.1"/>
-    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store"/>
+    <Option Name="BoardPartRepoPaths" Val="$PPRDIR/../../../../../../AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -70,19 +70,19 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../Lab3/ball.vhd">
+      <File Path="$PPRDIR/../ball.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Lab3/vga_sync.vhd">
+      <File Path="$PPRDIR/../vga_sync.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../Lab3/vga_top.vhd">
+      <File Path="$PPRDIR/../vga_top.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -96,14 +96,14 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../../Lab3/vga_top.xdc">
+      <File Path="$PPRDIR/../vga_top.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PPRDIR/../../Lab3/vga_top.xdc"/>
+        <Option Name="TargetConstrsFile" Val="$PPRDIR/../vga_top.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

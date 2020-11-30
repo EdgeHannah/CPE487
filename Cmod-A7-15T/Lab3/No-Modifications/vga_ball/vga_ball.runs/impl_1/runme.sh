@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab2/vga_ball/vga_ball.runs/impl_1'
+HD_PWD='C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Lab3/No-Modifications/vga_ball/vga_ball.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
