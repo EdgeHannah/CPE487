@@ -32,7 +32,11 @@ ARCHITECTURE Behavioral OF vga_top IS
             pixel_col : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
             red : OUT STD_LOGIC;
             green : OUT STD_LOGIC;
-            blue : OUT STD_LOGIC
+            blue : OUT STD_LOGIC;
+            up : IN STD_LOGIC;
+            down : IN STD_LOGIC;
+            left : IN STD_LOGIC;
+            right : IN STD_LOGIC
         );
     END COMPONENT;
     COMPONENT vga_sync IS
@@ -76,7 +80,11 @@ BEGIN
         pixel_col => S_pixel_col, 
         red       => S_red, 
         green     => S_green, 
-        blue      => S_blue
+        blue      => S_blue,
+        up        => frog_up,
+		down      => frog_down,
+	    left      => frog_left,
+	    right     => frog_right
     );
 
     vga_driver : vga_sync

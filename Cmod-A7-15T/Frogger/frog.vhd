@@ -13,8 +13,8 @@ ENTITY frog IS
 		blue      : OUT STD_LOGIC;
 		up        : IN STD_LOGIC;
 		down      : IN STD_LOGIC;
-	    	left      : IN STD_LOGIC;
-	    	right     : IN STD_LOGIC		
+	    left      : IN STD_LOGIC;
+	    right     : IN STD_LOGIC		
 	);
 END frog;
 
@@ -25,8 +25,8 @@ ARCHITECTURE Behavioral OF frog IS
 	SIGNAL frog_x  : STD_LOGIC_VECTOR(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(320, 11);
 	SIGNAL frog_y  : STD_LOGIC_VECTOR(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(240, 11);
 	-- current frog motion - initialized to +4 pixels/frame
-	SIGNAL frog_y_motion : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00000001000";
-	SIGNAL frog_x_motion : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00000001000";
+	SIGNAL frog_hop : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00000001000";
+	SIGNAL direction  : INTEGER := 8;
 BEGIN
 	red <= NOT frog_on;
 	green <= '1';
@@ -45,15 +45,31 @@ BEGIN
 		END IF;
 		END PROCESS;
 	-- process to move frog once every frame (i.e. once every vsync pulse)
-	mfrog : PROCESS (up, down, left, right) IS
+	mfrog : PROCESS
 	BEGIN
-		IF up == '1' THEN
-			IF frog_y + size <= 600 THEN
-				frog_y_motion <= "00000001000";
-			ELSE
-				frog_y_motion <= "00000000000";
-			END IF;
-			frog_y <= frog_y + frog_y_motion;
-		END IF;
+	   WAIT UNTIL rising_edge(v_sync);
+	   IF up = '1' THEN
+	       direction <= 1;
+	   ELSIF down = '1' THEN
+	       direction <= 2;
+	   ELSIF left = '1' THEN
+	       direction <= 3;
+	   ELSIF right = '1' THEN
+	       direction <= 4;
+	   ELSE
+	       direction <= 0;
+	   END IF;
+	   
+	   IF direction = 1 THEN
+	       frog_y <= frog_y - frog_hop;
+	   ELSIF direction = 2 THEN
+	       frog_y <= frog_y + frog_hop;
+	   ELSIF direction = 3 THEN
+	       frog_x <= frog_x - frog_hop;
+	   ELSIF direction = 4 THEN
+	       frog_x <= frog_x + frog_hop;
+	   ELSIF direction = 0 THEN
+	       frog_x <= frog_x;  
+	   END IF;  
 	END PROCESS;
 END Behavioral;
