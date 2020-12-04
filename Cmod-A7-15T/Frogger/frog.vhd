@@ -60,16 +60,14 @@ BEGIN
 	       direction <= 0;
 	   END IF;
 	   
-	   IF direction = 1 THEN
+	   IF direction = 1 AND frog_y > size THEN 
 	       frog_y <= frog_y - frog_hop;
-	   ELSIF direction = 2 THEN
+	   ELSIF direction = 2 AND frog_y + size < 480 THEN
 	       frog_y <= frog_y + frog_hop;
-	   ELSIF direction = 3 THEN
+	   ELSIF direction = 3 AND frog_x > size THEN  
 	       frog_x <= frog_x - frog_hop;
-	   ELSIF direction = 4 THEN
-	       frog_x <= frog_x + frog_hop;
-	   ELSIF direction = 0 THEN
-	       frog_x <= frog_x;  
+	   ELSIF direction = 4 AND frog_x + size < 640 THEN 
+	       frog_x <= frog_x + frog_hop; 
 	   END IF;  
 	END PROCESS;
 END Behavioral;

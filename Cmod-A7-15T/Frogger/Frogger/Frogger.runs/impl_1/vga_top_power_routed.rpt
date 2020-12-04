@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Tue Dec  1 13:19:37 2020
+| Date             : Thu Dec  3 19:37:13 2020
 | Host             : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 | Command          : report_power -file vga_top_power_routed.rpt -pb vga_top_power_summary_routed.pb -rpx vga_top_power_routed.rpx
 | Design           : vga_top
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        8 |       --- |             --- |
-| Slice Logic    |    <0.001 |      203 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       82 |     10400 |            0.79 |
+| Slice Logic    |    <0.001 |      217 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       96 |     10400 |            0.92 |
 |   Register     |    <0.001 |       68 |     20800 |            0.33 |
 |   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |    <0.001 |      121 |       --- |             --- |
+| Signals        |    <0.001 |      134 |       --- |             --- |
 | MMCM           |     0.104 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |       17 |       106 |           16.04 |
 | Static Power   |     0.072 |          |           |                 |

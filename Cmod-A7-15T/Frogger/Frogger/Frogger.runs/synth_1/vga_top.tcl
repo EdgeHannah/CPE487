@@ -72,7 +72,6 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 1
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a15tcpg236-1
 
@@ -96,7 +95,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_sync.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.vhd
 }
-read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+read_ip -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]

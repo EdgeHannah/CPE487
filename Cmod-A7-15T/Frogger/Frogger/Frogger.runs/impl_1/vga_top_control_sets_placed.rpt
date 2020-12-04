@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Dec  1 13:19:02 2020
+| Date         : Thu Dec  3 19:36:40 2020
 | Host         : DESKTOP-TF4Q9RE running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file vga_top_control_sets_placed.rpt
 | Design       : vga_top
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              30 |           19 |
+| No           | No                    | No                     |              30 |           18 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              12 |            6 |
-| Yes          | No                    | No                     |              20 |           10 |
+| No           | Yes                   | No                     |              12 |            7 |
+| Yes          | No                    | No                     |              20 |           13 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               6 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -74,13 +74,13 @@ Table of Contents
 |          Clock Signal         |         Enable Signal        |  Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +-------------------------------+------------------------------+-------------------+------------------+----------------+--------------+
 |  clk_wiz_0_inst/inst/clk_out1 |                              | vga_driver/hsync0 |                1 |              1 |         1.00 |
-|  vga_driver/vsync_reg_0       |                              |                   |                2 |              4 |         2.00 |
+|  vga_driver/vga_vsync_OBUF    |                              |                   |                2 |              4 |         2.00 |
 |  clk_wiz_0_inst/inst/clk_out1 | vga_driver/v_cnt[10]_i_1_n_0 |                   |                3 |              4 |         1.33 |
 |  clk_wiz_0_inst/inst/clk_out1 | vga_driver/v_cnt[10]_i_1_n_0 | vga_driver/v_cnt0 |                1 |              6 |         6.00 |
-|  vga_driver/vsync_reg_0       | add_frog/frog_y0             |                   |                4 |              8 |         2.00 |
-|  vga_driver/vsync_reg_0       | add_frog/p_0_out             |                   |                3 |              8 |         2.67 |
-|  clk_wiz_0_inst/inst/clk_out1 |                              | vga_driver/clear  |                5 |             11 |         2.20 |
-|  clk_wiz_0_inst/inst/clk_out1 |                              |                   |               17 |             26 |         1.53 |
+|  vga_driver/vga_vsync_OBUF    | add_frog/frog_x              |                   |                6 |              8 |         1.33 |
+|  vga_driver/vga_vsync_OBUF    | add_frog/frog_y[10]_i_1_n_0  |                   |                4 |              8 |         2.00 |
+|  clk_wiz_0_inst/inst/clk_out1 |                              | vga_driver/clear  |                6 |             11 |         1.83 |
+|  clk_wiz_0_inst/inst/clk_out1 |                              |                   |               16 |             26 |         1.62 |
 +-------------------------------+------------------------------+-------------------+------------------+----------------+--------------+
 
 

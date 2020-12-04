@@ -114,7 +114,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "Implementation" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -140,7 +139,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.runs/synth_1/vga_top.dcp
-  read_ip -quiet c:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.xdc
 OPTRACE "read constraints: implementation" END { }

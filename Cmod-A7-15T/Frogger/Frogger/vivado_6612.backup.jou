@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Dec  1 15:03:47 2020
+# Process ID: 6612
+# Current directory: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5380 C:\Users\eastc\Desktop\CPE487\Cmod-A7-15T\Frogger\Frogger\Frogger.xpr
+# Log file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/vivado.log
+# Journal file: C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/Frogger/Frogger.xpr
+update_compile_order -fileset sources_1
