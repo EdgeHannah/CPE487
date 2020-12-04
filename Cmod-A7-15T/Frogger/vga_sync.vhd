@@ -5,12 +5,6 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 ENTITY vga_sync IS
 	PORT (
 		pixel_clk : IN STD_LOGIC;
-		red_in    : IN STD_LOGIC;
-		green_in  : IN STD_LOGIC;
-		blue_in   : IN STD_LOGIC;
-		red_out   : OUT STD_LOGIC;
-		green_out : OUT STD_LOGIC;
-		blue_out  : OUT STD_LOGIC;
 		hsync     : OUT STD_LOGIC;
 		vsync     : OUT STD_LOGIC;
 		pixel_row : OUT STD_LOGIC_VECTOR (10 DOWNTO 0);
@@ -70,9 +64,5 @@ BEGIN
 		END IF;
 		pixel_col <= h_cnt;
 		pixel_row <= v_cnt;
-		-- Register video to clock edge and suppress video during blanking and sync periods
-		red_out   <= red_in AND video_on;
-		green_out <= green_in AND video_on;
-		blue_out  <= blue_in AND video_on;
 	END PROCESS;
 END Behavioral;

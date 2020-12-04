@@ -8,9 +8,9 @@ ENTITY frog IS
 		v_sync    : IN STD_LOGIC;
 		pixel_row : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
 		pixel_col : IN STD_LOGIC_VECTOR(10 DOWNTO 0);
-		red       : OUT STD_LOGIC;
-		green     : OUT STD_LOGIC;
-		blue      : OUT STD_LOGIC;
+		red       : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+		green     : OUT STD_LOGIC_VECTOR (2 DOWNTO 0);
+		blue      : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
 		up        : IN STD_LOGIC;
 		down      : IN STD_LOGIC;
 	    left      : IN STD_LOGIC;
@@ -28,9 +28,9 @@ ARCHITECTURE Behavioral OF frog IS
 	SIGNAL frog_hop : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00000001000";
 	SIGNAL direction  : INTEGER := 8;
 BEGIN
-	red <= NOT frog_on;
-	green <= '1';
-	blue  <= NOT frog_on;
+	--red <= NOT frog_on;
+	--green <= '1';
+	--blue  <= NOT frog_on;
 
 	-- process to draw frog current pixel address is covered by frog position
 	bdraw : PROCESS (frog_x, frog_y, pixel_row, pixel_col) IS
@@ -39,9 +39,9 @@ BEGIN
 		   (pixel_col <= frog_x + size) AND
 		   (pixel_row >= frog_y - size) AND
 	  	   (pixel_row <= frog_y + size) THEN
-			frog_on <= '1';
+	  	    red <= "000"; green <= "100"; blue <= "00";
 		ELSE
-			frog_on <= '0';
+			red <= "000"; green <= "000"; blue <= "00";
 		END IF;
 		END PROCESS;
 	-- process to move frog once every frame (i.e. once every vsync pulse)
