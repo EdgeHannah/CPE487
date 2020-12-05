@@ -10,9 +10,29 @@
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source vga_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1096.438 ; gain = 0.000
 Command: synth_design -top vga_top -part xc7a15tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: [Device 21-403] Loading part xc7a15tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13068
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1106.953 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'vga_top' [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.vhd:22]
+INFO: [Synth 8-3491] module 'frog' declared at 'C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/frog.vhd:7' bound to instance 'add_frog' of component 'frog' [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'frog' [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/frog.vhd:22]
+ERROR: [Synth 8-6903] Subtype of array must be constrained. Use VHDL 2008 instead [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/image_package.vhd:6]
+ERROR: [Synth 8-285] failed synthesizing module 'frog' [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/frog.vhd:22]
+ERROR: [Synth 8-285] failed synthesizing module 'vga_top' [C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.vhd:22]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1122.613 ; gain = 15.660
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  4 13:35:03 2020...

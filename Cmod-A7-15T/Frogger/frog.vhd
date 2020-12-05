@@ -2,6 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE WORK.IMAGE_PACKAGE.ALL;
 
 ENTITY frog IS
 	PORT (
@@ -27,23 +28,29 @@ ARCHITECTURE Behavioral OF frog IS
 	-- current frog motion - initialized to +4 pixels/frame
 	SIGNAL frog_hop : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00000001000";
 	SIGNAL direction  : INTEGER := 8;
+	
+	constant SCORE_X : INTEGER := 10;
+    constant SCORE_Y : INTEGER := 10;
 BEGIN
-	--red <= NOT frog_on;
-	--green <= '1';
-	--blue  <= NOT frog_on;
-
 	-- process to draw frog current pixel address is covered by frog position
-	bdraw : PROCESS (frog_x, frog_y, pixel_row, pixel_col) IS
+	draw : PROCESS (frog_x, frog_y, pixel_row, pixel_col) IS
+	variable score : INTEGER := 1;
 	BEGIN
 		IF (pixel_col >= frog_x - size) AND
 		   (pixel_col <= frog_x + size) AND
 		   (pixel_row >= frog_y - size) AND
 	  	   (pixel_row <= frog_y + size) THEN
-	  	    red <= "000"; green <= "100"; blue <= "00";
+	  	    red <= "000"; green <= "011"; blue <= "00";
 		ELSE
 			red <= "000"; green <= "000"; blue <= "00";
 		END IF;
-		END PROCESS;
+		
+        if DIGIT_ARRAY(digit_of_int(score, 1))(SCORE_Y,
+        SCORE_X) then
+            red <= "1111"; green <= "1111"; blue <= "1111";
+        end if;
+		
+	END PROCESS;
 	-- process to move frog once every frame (i.e. once every vsync pulse)
 	mfrog : PROCESS
 	BEGIN

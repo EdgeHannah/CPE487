@@ -91,6 +91,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/image_package.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/frog.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_sync.vhd
   C:/Users/eastc/Desktop/CPE487/Cmod-A7-15T/Frogger/vga_top.vhd

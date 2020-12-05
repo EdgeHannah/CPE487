@@ -59,12 +59,6 @@ ARCHITECTURE Behavioral OF vga_top IS
     
     
 BEGIN
-    -- vga_driver only drives MSB of red, green & blue
-    -- so set other bits to zero
-    vga_red(1 DOWNTO 0) <= "00";
-    vga_green(1 DOWNTO 0) <= "00";
-    vga_blue(0) <= '0';
-
     add_frog : frog
     PORT MAP(
         --instantiate frog component
